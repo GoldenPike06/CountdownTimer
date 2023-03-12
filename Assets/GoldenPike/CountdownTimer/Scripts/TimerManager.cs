@@ -3,12 +3,18 @@ using UnityEngine;
 
 namespace GoldenPike.CountdownTimer.Scripts
 {
+    /// <summary>
+    /// Manages all timers in the scene. Attach this to a TimerManager GameObject in the scene.
+    /// </summary>
     public class TimerManager : MonoBehaviour
     {
         public List<Timer> Timers = new List<Timer>();
-        
+
+        /// <summary>
+        /// Creates a new timer as a child game object and adds it to the list of timers.
+        /// </summary>
         public Timer CreateTimer(float duration, bool repeat = false, TimerDisplayFormat displayFormat = TimerDisplayFormat.MinutesSeconds,
-            bool startOnAwake = false, AudioClip clip = null)
+            bool startOnAwake = false)
         {
             var go = new GameObject("Timer");
             go.transform.SetParent(transform);
@@ -17,17 +23,10 @@ namespace GoldenPike.CountdownTimer.Scripts
             timer.Repeat = repeat;
             timer.DisplayFormat = displayFormat;
             timer.StartOnAwake = startOnAwake;
-            timer.OnTimerExpiredWithAudio += PlaySoundEffect;
             Timers.Add(timer);
             return timer;
         }
 
-        private void PlaySoundEffect(AudioClip clip)
-        {
-            if (clip == null) return;
-            AudioSource.PlayClipAtPoint(clip, Vector3.zero);
-        }
-        
         #region Control Individual Timers
 
         public void StartTimer(Timer timer)

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace GoldenPike.CountdownTimer.Scripts
 {
+    /// <summary>
+    /// Checks the state of the timer through events. Attach this to a Timer game object in the scene and serialize values in the inspector.
+    /// </summary>
     public class Timer : MonoBehaviour
     {
         public event Action OnTimerStart;
@@ -10,17 +13,15 @@ namespace GoldenPike.CountdownTimer.Scripts
         public event Action OnTimerReset;
         public event Action OnTimerTick;
         public event Action OnTimerExpired;
-        public event Action<AudioClip> OnTimerExpiredWithAudio;
         public event Action OnTimerPause;
         public event Action OnTimerResume;
+        public event Action OnCustomEvent;
 
         public float Duration;
         public bool Repeat;
         public TimerDisplayFormat DisplayFormat = TimerDisplayFormat.MinutesSeconds;
         public bool StartOnAwake = false;
-        
-        [SerializeField] private AudioClip clip;
-        
+
         private float _remainingTime;
         private bool _isRunning = false;
         private bool _isPaused = false;
@@ -41,6 +42,9 @@ namespace GoldenPike.CountdownTimer.Scripts
             CountDownTimer();
         }
 
+        /// <summary>
+        /// You can invoke the OnCustomEvent event here to trigger a custom event and use it in your own scripts.
+        /// </summary>
         private void CountDownTimer()
         {
             if (!_isRunning || _isPaused) return;
@@ -55,7 +59,6 @@ namespace GoldenPike.CountdownTimer.Scripts
                     StopTimer();
 
                 OnTimerExpired?.Invoke();
-                OnTimerExpiredWithAudio?.Invoke(clip);
             }
             else
                 OnTimerTick?.Invoke();

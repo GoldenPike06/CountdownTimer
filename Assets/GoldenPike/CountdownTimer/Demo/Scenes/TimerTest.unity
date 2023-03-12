@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7b92e9d48268848b4130e50d008758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 554
+  Duration: 523
   Repeat: 0
   DisplayFormat: 1
   StartOnAwake: 1
@@ -2730,8 +2730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7b92e9d48268848b4130e50d008758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 50
-  Repeat: 1
+  Duration: 10
+  Repeat: 0
   DisplayFormat: 0
   StartOnAwake: 1
 --- !u!4 &2098798156

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 namespace GoldenPike.CountdownTimer.Scripts
 {
+    /// <summary>
+    /// UI component for displaying a timer. Attach this to a game object with a TextMeshProUGUI component.
+    /// Serialize the timer you want to display in the inspector.
+    /// You can also use the CreateTimer method from the TimerManager, then set the Timer property of this component.
+    /// </summary>
     public class TimerUI : MonoBehaviour
     {
         [SerializeField] private Timer timer;

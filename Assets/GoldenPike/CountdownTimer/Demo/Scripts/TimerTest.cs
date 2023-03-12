@@ -7,11 +7,10 @@ namespace GoldenPike.CountdownTimer.Demo.Scripts
     {
         [SerializeField] private TimerManager timerManager;
         [SerializeField] private TimerUI timerUI;
-        [SerializeField] private AudioClip clip;
 
         private void Start()
         {
-            var timer = timerManager.CreateTimer(5555, false, TimerDisplayFormat.HoursMinutesSeconds, true, clip);
+            var timer = timerManager.CreateTimer(5555, false, TimerDisplayFormat.HoursMinutesSeconds, true);
             timerUI.Timer = timer;
             timer.StartTimer();
         }
