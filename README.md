@@ -7,3 +7,4 @@ Simple countdown timer for Unity.
   - Second
   - Minute:Second
   - Hour:Minute:Second
+- Timer delay functionality
