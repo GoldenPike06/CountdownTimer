@@ -43,6 +43,9 @@ namespace GoldenPike.CountdownTimer.Scripts
                 progressBar.maxValue = 1;
             else
                 Debug.LogWarning("No progress bar assigned to TimerUI");
+            
+            string formattedTime = FormatTime(timer.Duration);
+            timeText.text = formattedTime;
 
         }
 

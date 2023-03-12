@@ -18,6 +18,7 @@ namespace GoldenPike.CountdownTimer.Scripts
         public event Action OnCustomEvent;
 
         public float Duration;
+        public float Delay;
         public bool Repeat;
         public TimerDisplayFormat DisplayFormat = TimerDisplayFormat.MinutesSeconds;
         public bool StartOnAwake = false;
@@ -25,6 +26,7 @@ namespace GoldenPike.CountdownTimer.Scripts
         private float _remainingTime;
         private bool _isRunning = false;
         private bool _isPaused = false;
+        private float _elapsedDelay = 0.0f;
 
         private void Awake()
         {
@@ -48,7 +50,10 @@ namespace GoldenPike.CountdownTimer.Scripts
         private void CountDownTimer()
         {
             if (!_isRunning || _isPaused) return;
-            
+
+            _elapsedDelay += Time.deltaTime;
+            if (_elapsedDelay < Delay) return;
+
             _remainingTime -= Time.deltaTime;
 
             if (_remainingTime <= 0.0f)
@@ -115,6 +120,9 @@ namespace GoldenPike.CountdownTimer.Scripts
         {
             if (Duration < 0.0f)
                 Duration = 0.0f;
+            
+            if (Delay < 0.0f)
+                Delay = 0.0f;
         }
 
         private void OnDisable()
