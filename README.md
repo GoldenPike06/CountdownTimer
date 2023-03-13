@@ -24,4 +24,5 @@ Alternatively, you can create a new Timer in code using the CreateTimer method i
 2. Use the TimerManager class' methods to start/stop/pause/resume/restart timers.
 
 **Note**
+
 Deselecting Start On Awake in the Timer component will require you to use the StartTimer method from the TimerManager class wherever you wish to start the timer.
