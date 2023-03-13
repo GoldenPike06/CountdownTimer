@@ -14,12 +14,13 @@ namespace GoldenPike.CountdownTimer.Scripts
         /// Creates a new timer as a child game object and adds it to the list of timers.
         /// </summary>
         public Timer CreateTimer(float duration, bool repeat = false, TimerDisplayFormat displayFormat = TimerDisplayFormat.MinutesSeconds,
-            bool startOnAwake = false)
+            bool startOnAwake = false, float delay = 0f)
         {
             var go = new GameObject("Timer");
             go.transform.SetParent(transform);
             var timer = go.AddComponent<Timer>();
             timer.Duration = duration;
+            timer.Delay = delay;
             timer.Repeat = repeat;
             timer.DisplayFormat = displayFormat;
             timer.StartOnAwake = startOnAwake;

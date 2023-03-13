@@ -10,7 +10,7 @@ namespace GoldenPike.CountdownTimer.Demo.Scripts
 
         private void Start()
         {
-            var timer = timerManager.CreateTimer(5555, false, TimerDisplayFormat.HoursMinutesSeconds, true);
+            var timer = timerManager.CreateTimer(5555, false, TimerDisplayFormat.HoursMinutesSeconds, true, 3);
             timerUI.Timer = timer;
             timer.StartTimer();
         }

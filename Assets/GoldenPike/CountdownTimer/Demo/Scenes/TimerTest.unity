@@ -2073,6 +2073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 523
+  Delay: 0
   Repeat: 0
   DisplayFormat: 1
   StartOnAwake: 1
@@ -2731,6 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 10
+  Delay: 5
   Repeat: 0
   DisplayFormat: 0
   StartOnAwake: 1
