@@ -22,6 +22,7 @@ Simple countdown timer for Unity.
 Alternatively, you can create a new Timer in code using the CreateTimer method in the TimerManager class.
 1. Set the TimerUI's timer property to the new timer. This will automatically set the Timer in the TimerUI component's Timer field.
 2. Use the TimerManager class' methods to start/stop/pause/resume/restart timers.
+3. A new Timer will be added as a child of the TimerManager game object.
 
 To add a custom event when the timer reaches a certain point, invoke the OnCustomEvent anywhere in the CountDownTimer method in the Timer class.
 
