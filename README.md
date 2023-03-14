@@ -17,7 +17,7 @@ Simple countdown timer for Unity.
 1. Create an empty game object and attach the Timer component.
 2. Create another game object and attach the TimerManager component, which will contain a list of timers.
 3. Create a TextMeshPro-Text game object and attach the TimerUI component
-4. Serialize the values for each script in the inspector. Duration should be converted to seconds.
+4. Serialize the values for each script in the inspector. Duration should be converted to seconds by either multiplying minutes by 60 or hours by 3600.
 
 Alternatively, you can create a new Timer in code using the CreateTimer method in the TimerManager class.
 1. Set the TimerUI's timer property to the new timer. This will automatically set the Timer in the TimerUI component's Timer field.
